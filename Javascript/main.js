@@ -16,3 +16,7 @@ taskItem.addEventListener('change',uploadFile)
 //refreshPage
 import { editButton,isRefreshPage } from "./refreshEdit.js";
 editButton.forEach((button,index)=>isRefreshPage(index));
+
+//count task
+import { countUndone } from "./countUndone.js";
+countUndone();
