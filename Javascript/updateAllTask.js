@@ -96,11 +96,7 @@ export function updateAllTask(taskArray = [], taskList) {
     })
     .join("");
 
-<<<<<<< HEAD
-      //重新綁一次父元素
-=======
   //重新綁一次父元素
->>>>>>> 6b97c5e96bd4a82fc2b245ed0b82b1f8d5adfe3b
   document.querySelectorAll(".task").forEach(task=>{
     task.addEventListener("click",editExistingTask)
     task.addEventListener("change",changeFile)
