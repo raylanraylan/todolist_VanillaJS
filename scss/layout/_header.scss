@@ -1,0 +1,11 @@
+@use "../base/" as *;
+@forward "../components/nav";
+
+header {
+  background-color: $primary-blue;
+
+  .header_nav{
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}

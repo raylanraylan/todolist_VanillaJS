@@ -1,0 +1,115 @@
+@use "../base/" as *;
+@use "../utils/breakpoint" as *;
+
+//task共通樣式
+.task_information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  border-radius: 5px 5px 0 0;
+  background-color: $gray-300;
+
+  @include breakpoint($tablet) {
+    font-size: $font-size_l;
+  }
+}
+
+.taskOverview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+//兩個區塊各自更動的部份
+
+.add_task_item,
+.task {
+  order: 1;
+  .task_edit {
+    background-color: $gray-300;
+  }
+
+  .edit_input {
+    padding: 12px 18px 12px 72px;
+  }
+}
+
+.add_task_item {
+  display: none;
+  margin: 24px 0;
+}
+
+.task_item_state {
+  background-color: $gray-300;
+
+  .task_state_information {
+    display: flex;
+    padding: 0 0 17px 50px;
+
+    > div + div {
+      margin-left: 16px;
+    }
+
+    @include breakpoint($tablet) {
+      padding: 0px 0 17px 72px;
+    }
+  }
+}
+
+//兩個區塊上層task標題不同的padding
+
+.add_task_item,
+.task {
+  .task_information {
+    padding: 12px 18px;
+
+    @include breakpoint($tablet) {
+      padding: 24px 32px;
+    }
+  }
+}
+
+.task_item_state {
+  .task_information {
+    padding: 12px 18px 7px;
+
+    @include breakpoint($tablet) {
+      padding: 24px 32px 20px;
+    }
+  }
+}
+
+.toggleImportantColor {
+  background-color: $secondary-yellow;
+}
+
+.display_block {
+  display: block;
+}
+
+.display_none {
+  display: none;
+}
+
+.importantTask {
+  order: 0;
+}
+
+.finishTask {
+  order: 100;
+}
+
+.taskDragShadow {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .5);
+  position: relative;
+
+  &::after{
+    content: "\f142";
+    position: absolute;
+    left: 1%;
+    top: 35%;
+    font: var(--fa-font-solid);
+    font-size: 24px;
+    color: $gray-500;  
+  }
+}

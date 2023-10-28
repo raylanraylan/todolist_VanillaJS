@@ -1,0 +1,27 @@
+@use "../base/" as *;
+
+%titele{
+  font-size: $font-size_l;
+  font-weight: $font-weight_l;
+}
+
+%subtitele{
+  font-size: $font-size_m;
+  font-weight: $font-weight_l;
+}
+
+%paragraph{
+  font-size: $font-size_l;
+  font-weight: $font-weight_l;
+}
+
+%small_text{
+  @extend %paragraph;
+  color:$gray-900;
+}
+
+%status{
+  font-size: $font-size_l;
+  font-weight: $font-weight_m;
+  font-style: italic;
+}

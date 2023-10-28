@@ -1,0 +1,226 @@
+@use "./button" as *;
+@use "../base/" as *;
+@use "../utils/breakpoint" as *;
+
+.deadline {
+  margin-bottom: 22px;
+
+  .deadline_text {
+    text-transform: capitalize;
+    font-size: $font-size_s;
+    @include breakpoint($tablet) {
+      font-size: $font-size_l;
+    }
+  }
+
+  .deadline_text {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -20px;
+
+      content: "\f073";
+      font: var(--fa-font-solid);
+
+      @include breakpoint($tablet) {
+        left: -30px;
+      }
+    }
+  }
+
+  .deadline_button {
+    margin-top: 8px;
+
+    input {
+      width: 162px;
+      height: 35px;
+      padding: 8px 16px;
+      border: 0;
+      color: $gray-700;
+    }
+
+    input:focus-visible {
+      outline: 0;
+    }
+
+    input[type="date" i]::-webkit-calendar-picker-indicator,
+    input[type="time" i]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+
+    .deadline_button_date {
+      margin-right: 8px;
+    }
+  }
+}
+
+.file_container {
+  margin-bottom: 27px;
+
+  // display: flex;
+  // flex-direction: column;
+
+  .file_text {
+    text-transform: capitalize;
+    font-size: $font-size_s;
+    @include breakpoint($tablet) {
+      font-size: $font-size_l;
+    }
+  }
+
+  .file_text {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 2px;
+      left: -20px;
+
+      content: "\f15b";
+      font: var(--fa-font-regular);
+
+      @include breakpoint($tablet) {
+        left: -30px;
+      }
+    }
+  }
+
+  .file_button {
+    display: flex;
+    align-items: center;
+  }
+
+  .file_button_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+
+    width: 32px;
+    height: 32px;
+    background-color: $gray-700;
+
+    font: var(--fa-font-regular);
+    color: $white;
+
+    @include breakpoint($tablet) {
+      left: -30px;
+    }
+  }
+  
+  span{
+    display: block;
+    font-size: $font-size_s;
+  }
+
+  .file_date{
+    color:$gray-900;
+  }
+}
+
+.uploadFile,.changeFile {
+  opacity: 0;
+  width: 0;
+}   
+
+
+.file_data{
+  display: none;
+  margin-right: 20px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  .comment_title {
+    text-transform: capitalize;
+    @include breakpoint($tablet) {
+      font-size: $font-size_l;
+    }
+  }
+
+  .comment_title {
+    position: relative;
+    &::before {
+      position: absolute;
+      left: -20px;
+
+      content: "\f4ad";
+      font: var(--fa-font-regular);
+
+      @include breakpoint($tablet) {
+        left: -30px;
+      }
+    }
+  }
+
+  textarea {
+    padding: 8px 16px;
+    margin-top: 8px;
+    resize: none;
+    &::placeholder {
+      color: $gray-700;
+    }
+  }
+}
+
+.check {
+  display: flex;
+  .cancel_button,.confirm_button{
+    flex: 1 1 0;
+
+    padding: 8px 0;
+    border: 0;
+
+    text-transform: capitalize;
+
+    // .cancel_button{
+    //   background-color: $white;
+    //   color: $primary-red;
+    //   &:hover {
+    //     background-color: $hover-white;
+    //     color: $white;
+    //   }
+    // }
+
+    // .confirm_button{
+    //   background-color: $primary-blue;
+    //   color: $white;
+    //   &:hover {
+    //     background-color: $hover-blue;
+    //     color: $white;
+    //   }
+    // }
+
+    @include breakpoint($tablet) {
+      height: 60px;
+      font-size: $font-size_l;
+    }
+  }
+
+  .cancel_button {
+    background-color: $white;
+    color: $primary-red;
+    &:hover {
+      background-color: $hover-white;
+    }
+    &::before {
+      content: "\f00d";
+      font: var(--fa-font-solid);
+      margin-right: 8px;
+    }
+  }
+  .confirm_button {
+    background-color: $primary-blue;
+    color: $white;
+    &:hover {
+      background-color: $hover-blue;
+    }
+    &::before {
+      content: "\f067";
+      font: var(--fa-font-solid);
+      margin-right: 8px;
+    }
+  }
+}

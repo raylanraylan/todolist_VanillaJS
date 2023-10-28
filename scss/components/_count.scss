@@ -1,0 +1,8 @@
+@use "../base/" as *;
+@use "../utils/breakpoint" as *;
+
+.count {
+  margin-left: 16px;
+  font-style: italic;
+  color:$gray-700;
+}

@@ -1,0 +1,218 @@
+// 1. input點擊的時候可以顯示完成
+// 2. 點星星的時候背景會變色
+// 3. 點編輯的時候會下拉選單
+
+@use "../base/" as *;
+@use "../utils/breakpoint" as *;
+
+//新增task
+
+.add_task {
+  margin: 24px 0;
+
+  .add_task_button {
+    width: 100%;
+    border: 2px solid $gray-700;
+    border-radius: 5px;
+
+    background: $white;
+    padding: 19px 0 18px 60px;
+
+    text-transform: capitalize;
+    text-align: left;
+    font-size: $font-size_s;
+    color: $gray-500;
+
+    @include breakpoint($tablet) {
+      padding: 19px 0 18px 67px;
+      font-size: $font-size_l;
+    }
+  }
+  //icon跟定位
+  .add_task_button {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 33px;
+      content: "\f067";
+      font: var(--fa-font-solid); //用font-awesome預設css
+      margin-right: 8px;
+    }
+  }
+}
+
+//任務文字
+.task_event {
+  display: flex;
+}
+
+.task_title {
+  // margin-right:-16px;
+  border: none;
+  background-color: $gray-300;
+
+  font-size: $font-size_s;
+  line-height: 28px;
+  word-break: break-all;
+  // text-transform: capitalize;
+  outline: none;
+
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 1;
+  // overflow: hidden;
+  @include breakpoint($tablet) {
+    font-size: $font-size_l;
+  }
+
+  &::placeholder {
+    font-size: $font-size_s;
+    color: black;
+    @include breakpoint($tablet) {
+      font-size: $font-size_l;
+    }
+  }
+}
+
+//做完打勾的選項
+
+.finish_task {
+  appearance: none;
+
+  display: block;
+
+  position: relative;
+  background-color: $white;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  margin: 0 16px 0 0;
+
+  font-size: 0;
+
+  @include breakpoint($tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.finish_task:checked::before {
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+
+  content: "";
+  background-color: $primary-blue;
+  @include breakpoint($tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.finish_task:checked::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+
+  width: 14px;
+  height: 9px;
+
+  content: "\f00c";
+  font: var(--fa-font-solid);
+  font-size: $font-size_s;
+  color: $white;
+  @include breakpoint($tablet) {
+    top: 4px;
+    left: 4px;
+
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.finish_task:checked + .task_title::placeholder {
+  text-decoration: line-through;
+  color: $gray-800;
+}
+
+.task_mark {
+  display: flex;
+}
+
+//star
+.task_important {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background-color: transparent;
+  margin-right: 16px;
+
+  @include breakpoint($tablet) {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+  }
+}
+
+.fal.fa-star{
+  font: var(--fa-font-regular);
+  font-size: $font-size_s;
+  @include breakpoint($tablet) {
+    font-size: $font-size_l;
+  }
+}
+
+.fas.fa-star{
+  font-size: $font-size_s;
+  color: $primary-yellow;
+  @include breakpoint($tablet) {
+    font-size: $font-size_l;
+  }
+}
+//edit
+.task_edit_button {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background-color: transparent;
+  @include breakpoint($tablet) {
+    width: 24px;
+    height: 24px;
+  }
+
+  // &::after {
+  //   content: "\F4CB";
+  //   font-family: "bootstrap-icons";
+  //   font-size: $font-size_s;
+
+  //   @include breakpoint($tablet) {
+  //     font-size: $font-size_l;
+  //   }
+  // }
+
+  // &:active::after {
+  //   content: "\f304";
+  //   font: var(--fa-font-solid);
+  //   font-size: $font-size_s;
+  //   color: $primary-blue;
+
+  //   @include breakpoint($tablet) {
+  //     font-size: $font-size_l;
+  //   }
+  // }
+}
+
+.bi-pencil,
+.fa-pen {
+  font-size: $font-size_s;
+
+  @include breakpoint($tablet) {
+    font-size: $font-size_l;
+  }
+}
+.fa-pen {
+  color: $primary-blue;
+}

@@ -1,0 +1,6 @@
+@use "../base/" as *;
+
+body{
+  min-width: 375px;
+  background-color: $gray-500;
+}

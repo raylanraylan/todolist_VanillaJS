@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap-icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+<body>
+  <header>
+    <nav class="header_nav">
+      <ul class="header_task_category">
+        <li class="active" data-name="myTasks">my tasks</li>
+        <li data-name="inProgress">in progress</li>
+        <li data-name="completed">completed</li>  
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="add_task">
+        <button class="add_task_button" type="button">add task</button>
+        <form class="add_task_item">
+          <div class="task_information"> 
+            <div class="task_event">
+              <input class="finish_task" type="checkbox">
+              <input class="task_title" type="text" size="28" placeholder="Type Something Here...">
+            </div>
+            <div class="task_mark">
+              <button class="task_important" type="button"><i class="fal fa-star"></i></button>
+              <button class="task_edit_button fa-solid fa-pen" type="button"></button>
+            </div>
+          </div>
+          <div class="task_edit">
+            <div class="edit_input">
+              <div class="deadline">
+                <label for="deadline" class="deadline_text">deadline</label>
+                <div class="deadline_button">
+                  <input type="date" name="deadline" id="deadline" class="deadline_button_date">
+                  <input type="time" class="deadline_button_time">
+                </div>
+              </div>
+              <div class="file_container">
+                <label for="file" class="file_text">file
+                  <input type="file" name="file" id="file" class="uploadFile">
+                  <div class="file_button">
+                    <div class="file_data">
+                      <span class="file_name"></span>
+                      <span class="file_date"></span>
+                    </div>
+                    <div class="file_button_icon"><i class="fas fa-plus"></i></div>
+                  </div>
+                </label>
+              </div>
+              <div class="comment">
+                <label for="comment" class="comment_title">comment</label>
+                <textarea name="comment" class="comment_text" rows="5" placeholder="Type your memo here..." id="comment"></textarea>
+              </div>
+            </div>
+            <div class="check">
+              <button class="cancel_button" type="reset">cancel</button>
+              <button class="confirm_button" type="submit">add task</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="taskOverview">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="count"><span>4</span> tasks left</p>
+  </footer>
+
+  <script type="module" src="./JS/main.js"></script>
+</body>
+</html>

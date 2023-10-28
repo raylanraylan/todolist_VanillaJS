@@ -1,0 +1,39 @@
+@use "../base/" as *;
+@use "../utils/breakpoint" as *;
+
+.header_nav {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  // 沒在某頁的按鈕
+
+  li {
+    width: 160px;
+    text-transform: capitalize;
+    padding: 24px 0;
+    color: $secondary-blue;
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      font-size: $font-size_l;
+    }
+
+    // a {
+      // display: block;
+
+    // }
+  }
+
+  // 在某頁的按鈕
+
+  .active {
+    border-bottom: 5px solid #00408b;
+    color: $white;
+    // a {
+    // }
+  }
+}
